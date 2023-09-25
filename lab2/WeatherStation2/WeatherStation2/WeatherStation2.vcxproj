@@ -130,6 +130,7 @@
     <ClCompile Include="WeatherStation2.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CDestructionObserver.h" />
     <ClInclude Include="Observer.h" />
     <ClInclude Include="WeatherData.h" />
   </ItemGroup>

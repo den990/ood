@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{1bee058c-a2cb-4bec-8cb7-f1457c1a002e}</ProjectGuid>
-    <RootNamespace>WeatherStation2tests</RootNamespace>
+    <ProjectGuid>{10be428c-e09d-4cf5-8d5d-d89fbd6a11e5}</ProjectGuid>
+    <RootNamespace>WeatherStationDuo</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -104,6 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -118,6 +119,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -127,12 +129,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="WeatherStation2_tests.cpp" />
+    <ClCompile Include="WeatherStationDuo.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\WeatherStation2\CDestructionObserver.h" />
-    <ClInclude Include="..\WeatherStation2\Observer.h" />
-    <ClInclude Include="..\WeatherStation2\WeatherData.h" />
+    <ClInclude Include="Observer.h" />
+    <ClInclude Include="WeatherData.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

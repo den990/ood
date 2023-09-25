@@ -26,5 +26,8 @@
     <ClInclude Include="..\WeatherStation2\WeatherData.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="..\WeatherStation2\CDestructionObserver.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
