@@ -1,13 +1,20 @@
 #include "CShapeController.h"
+const std::string WINDOW_NAME = "Shape";
+const std::string RECTANGLE_TYPE = "RECTANGLE:";
+const std::string CIRCLE_TYPE = "CIRCLE:";
+const std::string TRIANGLE_TYPE = "TRIANGLE:";
+const std::string INPUT_FILE_NAME = "input.txt";
+const std::string OUTPUT_FILE_NAME = "output.txt";
+
 
  CShapeController::CShapeController()
-    : m_window(sf::VideoMode(800, 600), "Shape")
+    : m_window(sf::VideoMode(800, 600), WINDOW_NAME)
 {
 }
 
 void CShapeController::Start()
 {
-    ReadFileAndFillData("input.txt");
+    ReadFileAndFillData(INPUT_FILE_NAME);
 
     while (m_window.isOpen())
     {
@@ -15,7 +22,7 @@ void CShapeController::Start()
         DrawShapes();
     }
 
-    WriteData("output.txt");
+    WriteData(OUTPUT_FILE_NAME);
 }
 
 sf::Vector2f CShapeController::ParseCoordinates(const std::string& coordStr)
@@ -48,7 +55,7 @@ void CShapeController::ReadFileAndFillData(const std::string& fileName)
         std::istringstream iss(line);
         std::string typeFigure;
         iss >> typeFigure;
-        if (typeFigure == "RECTANGLE:")
+        if (typeFigure == RECTANGLE_TYPE)
         {
             sf::Vector2f size, size1;
             std::string strSize, strSize1;
@@ -63,7 +70,7 @@ void CShapeController::ReadFileAndFillData(const std::string& fileName)
             std::unique_ptr<sf::Shape> rectangleDecorator = std::make_unique<CRectangleDecorator>(size, size1);
             m_shapes.push_back(std::move(rectangleDecorator));
         }
-        if (typeFigure == "CIRCLE:")
+        if (typeFigure == CIRCLE_TYPE)
         {
             sf::Vector2f center;
             float radius;
@@ -78,10 +85,10 @@ void CShapeController::ReadFileAndFillData(const std::string& fileName)
                 radius = std::stof(radiusStr.substr(radiusPosition + 1));
 
             // Создаем декоратор для окружности
-            std::unique_ptr<sf::Shape> circleDecorator = std::make_unique<CCircleDecorator>(center, radius);
+            std::unique_ptr<sf::Shape> circleDecorator = std::make_unique<CCircleDecorator>(center.x, center.y, radius);
             m_shapes.push_back(std::move(circleDecorator));
         }
-        if (typeFigure == "TRIANGLE:")
+        if (typeFigure == TRIANGLE_TYPE)
         {
             sf::Vector2f point1, point2, point3;
             std::string strPoint1, strPoint2, strPoint3;

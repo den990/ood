@@ -30,9 +30,6 @@
     <ClCompile Include="CShapeController.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="CShapeDecorator.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CCircleDecorator.h">

@@ -138,7 +138,6 @@
     <ClCompile Include="CCircleDecorator.cpp" />
     <ClCompile Include="CRectangleDecorator.cpp" />
     <ClCompile Include="CShapeController.cpp" />
-    <ClCompile Include="CShapeDecorator.h" />
     <ClCompile Include="CTriangleDecorator.cpp" />
     <ClCompile Include="Shapes.cpp" />
   </ItemGroup>

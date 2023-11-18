@@ -5,7 +5,7 @@
 class CCircleDecorator : public sf::CircleShape
 {
 public:
-	CCircleDecorator(const sf::Vector2f& center, float radius);
+	CCircleDecorator(float x, float y, float radius);
 	double GetSquare() const;
 	double GetPerimetr() const;
 	void Draw(sf::RenderWindow& window) const;

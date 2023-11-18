@@ -1,11 +1,11 @@
 #include "CCircleDecorator.h"
 
 
-CCircleDecorator::CCircleDecorator(const sf::Vector2f& center, float radius)
+CCircleDecorator::CCircleDecorator(float x, float y, float radius)
 	: sf::CircleShape(radius)
 {
 	setFillColor(sf::Color::Yellow);
-	setPosition(center); // Устанавливаем позицию начальной точки
+	setPosition(x, y); // Устанавливаем позицию начальной точки
 }
 
  double CCircleDecorator::GetSquare() const 

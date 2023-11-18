@@ -1,0 +1,2 @@
+RECTANGLE: P=800; S=38400
+Composite shape: Square: 106478; Perimeter: 2118.72
